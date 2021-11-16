@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
 
 const Homepage = () => {
+  const [isOpen, setIsopen] = useState(false)
+
+  const toggle = () => {
+    setIsopen(!isOpen)
+  }
+
   return (
     <>
-      <Header />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      {console.log('Homepage: ', isOpen)}
+      <Header toggle={toggle} isOpen={isOpen} />
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
         fugit officiis necessitatibus hic? Inventore, accusamus quasi reiciendis

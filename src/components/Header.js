@@ -1,21 +1,20 @@
-import { React, useState } from 'react'
+import { React } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { GrFormClose } from 'react-icons/gr'
 import styled from 'styled-components'
 
-const Header = () => {
-  const [toggle, setToggle] = useState(false)
-
-  const handleClick = () => {
-    setToggle(!toggle)
-  }
-
+const Header = ({ toggle, isOpen }) => {
   return (
     <>
+      {console.log('Header: ', isOpen)}
       <HeaderContainer>
         <h2>i.gentz</h2>
         <IconContainer>
-          <MobileIcon onClick={handleClick} />
-          {console.log(toggle)}
+          {!isOpen ? (
+            <MobileBurgerIcon onClick={toggle} />
+          ) : (
+            <MobileQuitIcon onClick={toggle} />
+          )}
         </IconContainer>
       </HeaderContainer>
     </>
@@ -34,7 +33,7 @@ const HeaderContainer = styled.nav`
   height: 5rem;
   background: var(--bg-white);
   color: var(--text-dark);
-  z-index: 100;
+  z-index: 10;
 
   h2 {
     margin-left: 2rem;
@@ -46,7 +45,13 @@ const IconContainer = styled.div`
   margin-right: 2rem;
 `
 
-const MobileIcon = styled(GiHamburgerMenu)`
+const MobileBurgerIcon = styled(GiHamburgerMenu)`
+  height: 1.3rem;
+  width: 1.3rem;
+  cursor: pointer;
+`
+
+const MobileQuitIcon = styled(GrFormClose)`
   height: 1.3rem;
   width: 1.3rem;
   cursor: pointer;
