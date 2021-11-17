@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Content from '../components/Content/Content'
+import Footer from '../components/Footer/Footer'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Stage from '../components/Stage'
@@ -18,6 +19,7 @@ const Homepage = () => {
       <Header toggle={toggle} isOpen={isOpen} />
       <Stage />
       <Content />
+      <Footer />
     </>
   )
 }
