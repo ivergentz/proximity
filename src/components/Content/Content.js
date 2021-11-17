@@ -6,14 +6,14 @@ const Content = () => {
   return (
     <ContentContainer>
       {contentdata.map(data => (
-        <ContentListContainer key={data.id}>
+        <div key={data.id}>
           <Headline>{data.headline}</Headline>
           <ContentList>
             <li>{data.li1}</li>
             <li>{data.li2}</li>
             <li>{data.li3}</li>
           </ContentList>
-        </ContentListContainer>
+        </div>
       ))}
       <Headline>Das ist jetzt zu tun:</Headline>
       <p>
@@ -49,5 +49,3 @@ const ContentList = styled.ul`
   font-weight: 200;
   line-height: 1.5rem;
 `
-
-const ContentListContainer = styled.div``

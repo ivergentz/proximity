@@ -8,7 +8,7 @@ const Footer = () => {
       {footerdata.map(data => (
         <div key={data.id}>
           <Headline>{data.headline}</Headline>
-          <img src="data.img1" alt="" />
+          <img src={data.img1} alt="" />
           <Text>{data.para1}</Text>
           <img src={data.img2} alt="" />
           <Text>{data.para2}</Text>
