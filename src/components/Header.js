@@ -2,13 +2,14 @@ import { React } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrFormClose } from 'react-icons/gr'
 import styled from 'styled-components'
+import ig_logo from '../images/ig_logo.png'
 
 const Header = ({ toggle, isOpen }) => {
   return (
     <>
       {console.log('Header: ', isOpen)}
       <HeaderContainer>
-        <h2>i.gentz</h2>
+        <img src={ig_logo} alt="i.gentz" />
         <IconContainer>
           {!isOpen ? (
             <MobileBurgerIcon onClick={toggle} />
@@ -35,9 +36,15 @@ const HeaderContainer = styled.nav`
   color: var(--text-dark);
   z-index: 10;
 
-  h2 {
+  img {
+    width: 45px;
+    height: 45px;
     margin-left: 2rem;
     cursor: pointer;
+  }
+
+  @media (min-width: 680px) {
+    height: 6rem;
   }
 `
 

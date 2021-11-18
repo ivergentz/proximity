@@ -12,6 +12,8 @@ const Content = () => {
             <li>{data.li1}</li>
             <li>{data.li2}</li>
             <li>{data.li3}</li>
+            {data.li4 ? <li>{data.li4}</li> : ''}
+            {data.li5 ? <li>{data.li5}</li> : ''}
           </ContentList>
         </div>
       ))}
@@ -38,11 +40,30 @@ const ContentContainer = styled.section`
   p {
     font-weight: 200;
     line-height: 1.5rem;
+
+    @media (min-width: 680px) {
+      font-size: 1.25rem;
+      line-height: 1.85rem;
+    }
+  }
+
+  @media (min-width: 680px) {
+    width: 95%;
+
+    li {
+      font-size: 1.25rem;
+      line-height: 1.85rem;
+    }
   }
 `
 const Headline = styled.h2`
   font-weight: 500;
   font-size: 1rem;
+
+  @media (min-width: 680px) {
+    margin-top: 1.9rem;
+    font-size: 1.3rem;
+  }
 `
 
 const ContentList = styled.ul`
