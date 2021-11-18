@@ -32,6 +32,12 @@ const FooterContainer = styled.section`
   margin: 0 auto;
   padding-left: 30px;
 
+  @media (min-width: 680px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 2rem;
+  }
+
   div {
     margin: 0;
     padding: 0;
