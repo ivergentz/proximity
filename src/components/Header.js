@@ -17,6 +17,13 @@ const Header = ({ toggle, isOpen }) => {
             <MobileQuitIcon onClick={toggle} />
           )}
         </IconContainer>
+        <MenuItemsContainer isOpen={isOpen}>
+          <MenuItems>
+            <MenuItem>lorem</MenuItem>
+            <MenuItem>ipsum</MenuItem>
+            <MenuItem>dolores</MenuItem>
+          </MenuItems>
+        </MenuItemsContainer>
       </HeaderContainer>
     </>
   )
@@ -26,7 +33,6 @@ export default Header
 
 const HeaderContainer = styled.nav`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   top: 0;
   position: fixed;
@@ -49,9 +55,48 @@ const HeaderContainer = styled.nav`
 `
 
 const IconContainer = styled.div`
-  margin-right: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 2rem;
+
+  @media (min-width: 937px) {
+    display: none;
+  }
 `
 
+const MenuItemsContainer = styled.nav`
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 937px) {
+    display: none;
+  }
+`
+
+const MenuItems = styled.ul`
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+`
+const MenuItem = styled.li`
+  margin-left: 3rem;
+  color: var(--grey);
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-right: 3rem;
+  list-style-type: none;
+  cursor: pointer;
+
+  :hover {
+    color: var(--text-dark);
+    font-weight: 300;
+  }
+`
 const MobileBurgerIcon = styled(GiHamburgerMenu)`
   height: 1.3rem;
   width: 1.3rem;

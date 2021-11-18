@@ -8,9 +8,9 @@ const Sidebar = ({ isOpen, toggle }) => {
 
       <SidebarContainer isOpen={isOpen}>
         <SidebarSection>
-          <li onClick={toggle}>one</li>
-          <li onClick={toggle}>two</li>
-          <li onClick={toggle}>three</li>
+          <li onClick={toggle}>stage</li>
+          <li onClick={toggle}>me</li>
+          <li onClick={toggle}>footer</li>
         </SidebarSection>
       </SidebarContainer>
     </>
@@ -28,9 +28,9 @@ const SidebarContainer = styled.section`
   color: var(--grey);
   left: 0;
   margin-bottom: 0;
-  margin-top: 4rem;
-  transition: 1s ease-in;
+  /* margin-top: 4rem; */
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  transition: 1s ease;
 `
 
 const SidebarSection = styled.ul`
