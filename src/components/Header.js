@@ -87,13 +87,17 @@ const MenuItem = styled.li`
   color: var(--grey);
   font-weight: 100;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-right: 3rem;
   list-style-type: none;
   cursor: pointer;
 
   :hover {
     color: var(--text-dark);
+    font-weight: 300;
+  }
+
+  a:active {
     font-weight: 300;
   }
 `

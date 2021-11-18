@@ -11,6 +11,16 @@ const Sidebar = ({ isOpen, toggle }) => {
           <li onClick={toggle}>stage</li>
           <li onClick={toggle}>me</li>
           <li onClick={toggle}>footer</li>
+          <li className="red" onClick={toggle}>
+            <a href="https://www.google.de" target="_blank">
+              CV
+            </a>
+          </li>
+          <li className="red" onClick={toggle}>
+            <a href="https://www.google.de" target="_blank">
+              Zeugnisse
+            </a>
+          </li>
         </SidebarSection>
       </SidebarContainer>
     </>
@@ -53,6 +63,20 @@ const SidebarSection = styled.ul`
       font-weight: 500;
       font-size: 1.1rem;
       color: var(--text-dark);
+    }
+  }
+  .red {
+    :hover {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+    }
+    a:active {
+      color: none;
     }
   }
 `
