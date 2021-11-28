@@ -58,6 +58,7 @@ const ContentContainer = styled.section`
 const Container = styled.div`
   margin: 0 auto;
   max-width: 920px;
+  padding: 0.8rem 1.5rem 1rem 1.5rem;
 `
 
 const Headline = styled.h2`
