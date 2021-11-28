@@ -9,21 +9,29 @@ const Header = ({ toggle, isOpen }) => {
     <>
       {console.log('Header: ', isOpen)}
       <HeaderContainer>
-        <img src={ig_logo} alt="i.gentz" />
-        <IconContainer>
-          {!isOpen ? (
-            <MobileBurgerIcon onClick={toggle} />
-          ) : (
-            <MobileQuitIcon onClick={toggle} />
-          )}
-        </IconContainer>
-        <MenuItemsContainer isOpen={isOpen}>
-          <MenuItems>
-            <MenuItem>lorem</MenuItem>
-            <MenuItem>ipsum</MenuItem>
-            <MenuItem>dolores</MenuItem>
-          </MenuItems>
-        </MenuItemsContainer>
+        <MenuContainer>
+          <img src={ig_logo} alt="i.gentz" />
+          <IconContainer>
+            {!isOpen ? (
+              <MobileBurgerIcon onClick={toggle} />
+            ) : (
+              <MobileQuitIcon onClick={toggle} />
+            )}
+          </IconContainer>
+          <MenuItemsContainer isOpen={isOpen}>
+            <MenuItems>
+              <MenuItem>lorem</MenuItem>
+              <MenuItem>ipsum</MenuItem>
+              <MenuItem>dolores</MenuItem>
+              <MenuItem className="red">
+                <a href="https://google.de" rel="noreferrer" target="_blank">
+                  dolores
+                </a>
+              </MenuItem>
+              <MenuItem className="red">dolores</MenuItem>
+            </MenuItems>
+          </MenuItemsContainer>
+        </MenuContainer>
       </HeaderContainer>
     </>
   )
@@ -33,24 +41,38 @@ export default Header
 
 const HeaderContainer = styled.nav`
   display: flex;
-  align-items: center;
-  top: 0;
+  justify-content: center;
   position: fixed;
-  width: 100%;
-  height: 5rem;
+  top: 0;
   background: var(--bg-white);
-  color: var(--text-dark);
-  z-index: 10;
+  width: 100vw;
+  z-index: 1;
 
   img {
     width: 45px;
     height: 45px;
-    margin-left: 2rem;
     cursor: pointer;
   }
 
   @media (min-width: 680px) {
     height: 6rem;
+  }
+`
+
+const MenuContainer = styled.div`
+  display: flex;
+  position: fixed;
+  align-items: center;
+  width: 920px;
+  background: var(--bg-white);
+  color: var(--text-dark);
+  top: 0;
+  height: 5rem;
+  align-items: space-between;
+
+  @media (max-width: 936px) {
+    justify-content: space-evenly;
+    width: 100%;
   }
 `
 
@@ -81,6 +103,10 @@ const MenuItems = styled.ul`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+
+  .red {
+    color: red;
+  }
 `
 const MenuItem = styled.li`
   margin-left: 3rem;
@@ -95,6 +121,11 @@ const MenuItem = styled.li`
   :hover {
     color: var(--text-dark);
     font-weight: 300;
+  }
+
+  a {
+    color: red;
+    text-decoration: none;
   }
 
   a:active {

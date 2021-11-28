@@ -15,7 +15,6 @@ const Homepage = () => {
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      {console.log('Homepage: ', isOpen)}
       <Header toggle={toggle} isOpen={isOpen} />
       <Stage />
       <Content />

@@ -12,12 +12,12 @@ const Sidebar = ({ isOpen, toggle }) => {
           <li onClick={toggle}>me</li>
           <li onClick={toggle}>footer</li>
           <li className="red" onClick={toggle}>
-            <a href="https://www.google.de" target="_blank">
+            <a href="https://www.google.de" target="_blank" rel="noreferrer">
               CV
             </a>
           </li>
           <li className="red" onClick={toggle}>
-            <a href="https://www.google.de" target="_blank">
+            <a href="https://www.google.de" target="_blank" rel="noreferrer">
               Zeugnisse
             </a>
           </li>
